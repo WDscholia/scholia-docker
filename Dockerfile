@@ -14,4 +14,6 @@ RUN git clone https://github.com/fnielsen/scholia.git .
 
 RUN pip3 install -r requirements.txt
 
+EXPOSE 8100
+
 ENTRYPOINT ["python3","runserver.py"]
