@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+    reverseproxy:
+        image: proxy:latest
+        ports:
+            - 8080:8080
+        restart: always
+
+    test:
+        image: scholia:latest
+	ports:
+	   - 8100
+        restart: always
