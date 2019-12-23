@@ -6,6 +6,7 @@ RUN apt-get -y install git
 #RUN apt-get -Y install
 RUN apt-get -y install python3-pip
 
+RUN apt-get install telnet
 
 RUN mkdir /scholia/
 WORKDIR /scholia/
@@ -16,4 +17,4 @@ RUN pip3 install -r requirements.txt
 
 EXPOSE 8100
 
-ENTRYPOINT ["python3","runserver.py"]
+ENTRYPOINT ["startScholia.sh"]
