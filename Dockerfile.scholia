@@ -17,4 +17,4 @@ RUN pip3 install -r requirements.txt
 
 EXPOSE 8100
 
-ENTRYPOINT ["startScholia.sh"]
+ENTRYPOINT ["./startScholia.sh"]
