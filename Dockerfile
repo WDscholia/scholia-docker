@@ -1,12 +1,13 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 
+RUN ls
 RUN apt-get update
+RUN apt-get upgrade -y
 
-RUN apt-get -y install git
-#RUN apt-get -Y install
-RUN apt-get -y install python3-pip
+RUN apt-get install -y git
+RUN apt-get install -y python3-pip
 
-RUN apt-get install telnet
+RUN apt-get install -y telnet
 
 RUN mkdir /scholia/
 WORKDIR /scholia/
