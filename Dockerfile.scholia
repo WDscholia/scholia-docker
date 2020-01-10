@@ -11,7 +11,10 @@ RUN apt-get install telnet
 RUN mkdir /scholia/
 WORKDIR /scholia/
 
+
 RUN git clone https://github.com/fnielsen/scholia.git .
+COPY scripts/startScholia.sh .
+RUN chmod +x startScholia.sh
 
 RUN pip3 install -r requirements.txt
 
