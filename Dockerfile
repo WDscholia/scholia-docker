@@ -13,7 +13,7 @@ RUN mkdir /scholia/
 WORKDIR /scholia/
 
 
-RUN git clone https://github.com/fnielsen/scholia.git .
+RUN git clone https://github.com/nunogit/scholia.git .
 COPY scripts/startScholia.sh .
 RUN chmod +x startScholia.sh
 
