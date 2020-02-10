@@ -9,6 +9,6 @@ services:
 
     test:
         image: scholia:latest
-	ports:
-	   - 8100
+        ports:
+            - 8100
         restart: always

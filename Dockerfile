@@ -1,7 +1,33 @@
-FROM nginx:latest
+FROM ubuntu:16.04
 
-COPY config/nginx.conf /etc/nginx/nginx.conf
+RUN apt-get update
+RUN apt-get upgrade -y
 
-EXPOSE 8080
+RUN apt-get install -y git
+RUN apt-get install -y python3-pip
+#RUN apt-get intall  -y nginx
 
-CMD ["nginx", "-g", "daemon off;"]
+RUN pip3 install --upgrade pip
+
+RUN apt-get install -y telnet
+
+RUN mkdir /scholia/
+WORKDIR /scholia/
+RUN mkdir ../aa
+
+#RUN git clone https://github.com/nunogit/scholia.git .
+RUN git clone https://github.com/temp-scholia/scholia .
+
+COPY config/scholia.cfg .
+COPY config/scholiaConfig.js scholia/app/static/
+
+COPY scripts/startScholia.sh .
+RUN chmod +x startScholia.sh
+
+RUN pip3 install -r requirements.txt
+
+
+
+EXPOSE 8100
+
+ENTRYPOINT ["./startScholia.sh"]
