@@ -2,7 +2,7 @@
 
 #
 
-This images is currently setup to run with its own proxy
+This images are currently setup to run with its own proxy
 
 ## To build 
 
