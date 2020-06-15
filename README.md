@@ -12,13 +12,20 @@ docker build -t scholia-latest -f latest.Dockerfile
 
 ### Run
 
-docker run -d -e -p 8100:8100 --expose 8100 scholia-latest
+docker run -d -e -p 8100:8100 scholia-latest
 
-## Bui
+## Build and run Scholia with a proxy
 
-docker build -t scholiawithremoteproxy .
+### Build scholia with proxy
 
+docker build -t scholiawithremoteproxy -f proxyscholia.Dockerfile
 
-## To run
+## Build proxy for scholia
+
+docker build -t proxy4scholia -f proxy4sholia.Dockerfile
+
+## Run Scholia with proxy
 
 docker run -p 8100:8100 scholiawithremoteproxy
+
+docker run -p 80:80 proxy4scholia
