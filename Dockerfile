@@ -13,7 +13,6 @@ RUN apt-get install -y telnet
 
 RUN mkdir /scholia/
 WORKDIR /scholia/
-RUN mkdir ../aa
 
 #RUN git clone https://github.com/nunogit/scholia.git .
 RUN git clone https://github.com/temp-scholia/scholia .
