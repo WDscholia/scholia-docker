@@ -23,6 +23,7 @@ docker build -t scholiawithremoteproxy -f proxyscholia.Dockerfile
 ## Build proxy for scholia
 
 docker build -t proxy4scholia -f proxy4sholia.Dockerfile
+docker build -t proxy4scholia proxy4scholia/
 
 ## Run Scholia with proxy
 
