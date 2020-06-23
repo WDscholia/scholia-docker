@@ -1,14 +1,20 @@
-version: '2'
+version: '3'
 
 services:
     reverseproxy:
-        image: proxy:latest
+        build:
+	   context: ./proxy4scholia
+	   dockerfile: Dockerfile
+        #image: proxy:latest
         ports:
             - 8080:8080
         restart: always
 
-    test:
-        image: scholia:latest
+    scholiawithproxy:
+        build:
+	   context: ./scholiawithproxy
+	   dockerfile: Dockerfile
+        #image: scholia:latest
         ports:
             - 8100
         restart: always
